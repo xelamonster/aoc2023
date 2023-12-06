@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 import sys
 
-TOTAL_CUBES = {
-    "red": 12,
-    "green": 13,
-    "blue": 14,
-}
-
 def parse_game_record(record):
     max_cubes = {"red": 0, "green": 0, "blue": 0}
     start = record.find(":")
@@ -25,10 +19,7 @@ def parse_game_record(record):
         end = record.find(";", start+1)
         if end == -1:
             end = len(record)
-    for color, n in TOTAL_CUBES.items():
-        if max_cubes[color] > n:
-            return 0
-    return id
+    return max_cubes["red"] * max_cubes["green"] * max_cubes["blue"]
 
 
 
