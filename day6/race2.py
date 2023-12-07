@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import sys
-import functools
 
 def get_win_conditions_count(time, distance):
     total = 0
